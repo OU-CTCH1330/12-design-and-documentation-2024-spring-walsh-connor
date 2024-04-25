@@ -1,0 +1,8 @@
+*.dSYM/
+*.o
+bin/
+obj/
+
+test/test
+
+bin/lms.db

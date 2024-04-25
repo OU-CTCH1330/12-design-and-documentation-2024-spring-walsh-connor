@@ -1,0 +1,29 @@
+Filters: [instructor]
+Randomness seeded to: 343376056
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+test is a Catch2 v3.3.0 host application.
+Run with -? for options
+
+-------------------------------------------------------------------------------
+individual instructor tests
+  test initiation and QuickInformation()
+-------------------------------------------------------------------------------
+test/test.cpp:141
+...............................................................................
+
+test/test.cpp:145: PASSED:
+  REQUIRE( testHuman.QuickInformation() == "Ken Thompson" )
+with expansion:
+  "Ken Thompson" == "Ken Thompson"
+
+test/test.cpp:150: PASSED:
+  REQUIRE( ken.QuickInformation() == "0. Ken Thompson, age: "+ std::to_string( ken.Age() ) +", subject area: " + ctch1330::SubjectAreaToString( ctch1330::SubjectArea::kComputerScience ) )
+with expansion:
+  "0. Ken Thompson, age: 80, subject area: ComputerScience"
+  ==
+  "0. Ken Thompson, age: 80, subject area: ComputerScience"
+
+===============================================================================
+All tests passed (2 assertions in 1 test case)
+

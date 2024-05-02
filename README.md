@@ -48,4 +48,72 @@ These tips are general, not specific to current assignment.
 
 <br /><br /><br />
 
-... <span style='color: #8ae234'>you can add your work here </span>...
+## Learning Management System Documentation (By Connor Walsh)
+
+The learning management system (LMS) was built to enhance the day to day operations for instructors everywhere:
+- Setting up semesters, courses, or classes
+- Gives faculty the ability to add, delete or edit students within their classes
+- This app is setup for desktop use and does not have a remote server, therefore it is not expected to be used by multiple people
+
+| Function | Description |
+| -------| ----------- |
+| Add Student | Allows the instructor to add a new student to the Database |
+| Update Student | This function allows the instructor to change any current information for a student already in the Database |
+| Search by ID | Allows instructors to search for students based off of their Student ID's
+| Search by Name | Instructors are also able to search for a student using their name |
+| See class size | This function is running at all times and allows the instructor to see the curremt size of their classroom |
+| Reset | Allows instructors to reset a class roster instead of having to manually delete and update contents |
+
+You can learn more about Learning Management Systems and their benefits here: [link](https://wahoolearning.com/blog/learning-management-systems/benefits-customised-lms/) 
+
+
+``` 
+Class Diagram
+```
+```mermaid
+---
+title: Learning Management System
+---
+classDiagram
+    Student --|> Students  
+    Student --|> Course
+    Course Repository --|> Course
+    Repository --|> Course
+    Instructor --|> Human
+    Course Repository : +GetCourseById()
+    Course Repository : +GetStudentsForCourse()
+    Repository: +GetConnection()
+    Repository: +CloseConnection()
+    class Student{
+       +void inactivate
+       +void activate
+       +bool IsActive
+       +bool IsEligibleForEnrollment
+       +int AddCredits
+       +string QuickInformation
+    }
+    class Students{
+        +int AddStudent
+        +bool UpdateStudent
+        +bool GetStudentById
+        +vector SearchStudentByName
+        +int GetStudentBodySize
+    }
+    class Instructor{
+        +QuickInformation
+    }
+    class Human{
+        +int id
+        +String first_name()
+        +String last_name()
+    }
+    class Course{
+        +GetPage
+        +CourseName
+        +SemesterId
+        +Credits
+        +PageSize
+    }
+```
+
+This is an example of a more sophisticated LMS Class Diagram: ![Example](https://www.researchgate.net/profile/Dennise-Adrianto/publication/320211937/figure/fig4/AS:545893431431169@1507162544813/Class-Diagram-of-Online-Learning-System.png)
